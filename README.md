@@ -2,4 +2,4 @@
 
 🔗[cut salon nico Webサイト](https://kanade.raindrop.jp/cutsalonnico/)
 
-<img src="./images/image-001.png">
+<img src="./image/image-001.png">
