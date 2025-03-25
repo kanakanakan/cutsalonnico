@@ -1,6 +1,7 @@
 ## 2025年2月_進級展作品_「cut salon nico Webサイト」
 
 🔗[cut salon nico Webサイト](https://kanade.raindrop.jp/cutsalonnico/)
+
 🔗[プレゼン用スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
 
 <img src="./image/image-001.png">
