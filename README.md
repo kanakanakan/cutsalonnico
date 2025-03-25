@@ -1,10 +1,14 @@
 ## 2025年2月_進級展作品_「cut salon nico Webサイト」
 
+<img src="./image/image-001.png">
+
+### ▼各種リンク
 🔗[cut salon nico Webサイト](https://kanade.raindrop.jp/cutsalonnico/)
 
 🔗[プレゼン用スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
+<br />
+<br />
 
-<img src="./image/image-001.png">
 
 ### ▼制作背景
 2024年10月から2025年2月にかけて、三重県四日市市にある理容室・cut salon nico様にご協力いただき、お店のWebサイトを制作させていただきました。既存のサイトが存在していましたが、異なるページで同じ内容が繰り返されていたり、知りたい情報に少したどり着きづらい印象を受けました。お店の方との打ち合わせの際にも、「とにかくお店の特徴やメニューなど、情報が分かりやすいサイトにしてほしい」とのご要望が真っ先にあり、その点を主軸に制作を進めていくことにしました。
