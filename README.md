@@ -19,4 +19,7 @@
 - **1月6日〜19日：各種資料作成**
 - **1月20日〜進級展当日：プレゼン練習・調整**
 
-### ▼[スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
+### ▼使用技術・ツール
+![](https://skillicons.dev/icons?i=html,css,scss,js,figma,ps,ai,vscode)
+
+▼[スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
