@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU | cut salon nico</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo logo"><a href="./index.html"><img src="./image/logo.svg" alt="カットサロンニコ"></a>
+            </h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./index.html">HOME</a></li>
+                    <li class="nav__item"><a href="./about.html">ABOUT</a></li>
+                    <li id="active" class="nav__item"><a href="./menu.html">MENU</a></li>
+                    <li class="nav__item"><a href="./about.html#allinfo">SHOPINFO</a></li>
+                    <li class="nav__item"><a href="#access">ACCESS</a></li>
+                    <li class="nav__item"><a href="#contact">CONTACT</a></li>
+                    <li class="nav__item instagram-icon">
+                        <a href="./index.html#instagram">
+                            <img src="./image/Instagram_Glyph_Gradient.png" alt="インスタグラム">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ham">
+                <button class="ham__btn" aria-label="ハンバーガーメニュー">
+                    <span class="ham__lineTop"></span>
+                    <span class="ham__lineMiddle"></span>
+                    <span class="ham__lineBottom"></span>
+                </button>
+                <nav class="ham__nav">
+                    <ul class="ham__item">
+                        <li class="ham__list"><a class="ham__link" href="./index.html">HOME</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./about.html">ABOUT</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./menu.html">MENU</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./about.html#allinfo">SHOPINFO</a></li>
+                        <li class="ham__list"><a class="ham__link" href="#access">ACCESS</a></li>
+                        <li class="ham__list"><a class="ham__link" href="#contact">CONTACT</a></li>
+                        <li class="ham__list">
+                            <a class="ham__link" href="./index.html#instagram">
+                                <img src="./image/Instagram_Glyph_White.png" alt="インスタグラム">INSTAGRAM
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu-mainvisual visual">
+            <div class="visual__inner">
+                <h2 class="visual__title" data-label="メニュー">MENU</h2>
+            </div>
+        </section>
+
+        <div class="menu-guidance">
+            <div class="menu-guidance__inner">
+                <p class="menu-guidance__text">cut salon nico
+                    のメニューをご案内させていただきます。当店では、シェービング以外のメニューにつきましては、男性のお客様、女性のお客様を共通の価格とさせていただいております。また、基本メニューの他に、「毛穴クレンジング炭酸シャンプー」、「フェイスマッサージ」などの500円メニューがございますので、お客様のお悩みに合わせてご利用くださいませ。平日限定のお得なコースもございます♪
+                </p>
+            </div>
+        </div>
+
+        <section class="mainmenu">
+            <div class="mainmenu__inner">
+                <h2 class="mainmenu__title">MAIN MENU</h2>
+                <table class="table">
+                    <thead class="thead">
+                        <tr class="tr">
+                            <th class="th"></th>
+                            <th class="th">カット<br>
+                                お顔剃り<br>
+                                シャンプー</th>
+                            <th class="th">カット<br>
+                                お顔剃り</th>
+                            <th class="th">カットのみ</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr class="tr">
+                            <th class="th">大人</th>
+                            <td class="td" data-label="カット&お顔剃り&シャンプー">3,200円</td>
+                            <td class="td" data-label="カット&お顔剃り">2,800円</td>
+                            <td class="td" data-label="カットのみ">2,500円</td>
+                        </tr>
+                        <tr class="tr">
+                            <th class="th">高校生</th>
+                            <td class="td" data-label="カット&お顔剃り&シャンプー">3,000円</td>
+                            <td class="td" data-label="カット&お顔剃り">2,700円</td>
+                            <td class="td" data-label="カットのみ">2,300円</td>
+                        </tr>
+                        <tr class="tr">
+                            <th class="th">中学生</th>
+                            <td class="td" data-label="カット&お顔剃り&シャンプー">2,800円</td>
+                            <td class="td" data-label="カット&お顔剃り">2,500円</td>
+                            <td class="td" data-label="カットのみ" aria-label="2,300円">2,300円</td>
+                        </tr>
+                        <tr class="tr">
+                            <th class="th">小学生</th>
+                            <td class="td" data-label="カット&お顔剃り&シャンプー">2,300円</td>
+                            <td class="td"></td>
+                            <td class="td"></td>
+                        </tr>
+                        <tr class="tr">
+                            <th class="th">小人</th>
+                            <td class="td" data-label="カット&お顔剃り&シャンプー">2,000円</td>
+                            <td class="td"></td>
+                            <td class="td"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="option">
+            <div class="option__inner">
+                <h2 class="option__title fadeIn">OPTION</h2>
+                <div class="option__allmenu">
+                    <div class="option__color color fadeIn">
+                        <h3 class="option__subtitle">Color</h3>
+                        <dl class="option__list">
+                            <div class="option__item">
+                                <dt class="option__category">フルカラー</dt>
+                                <dd class="option__text">4,200円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">白髪染め</dt>
+                                <dd class="option__text">3,200円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">リタッチ</dt>
+                                <dd class="option__text">2,800円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">マニキュア</dt>
+                                <dd class="option__text">3,700円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">ブリーチ</dt>
+                                <dd class="option__text">4,500円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">メッシュ</dt>
+                                <dd class="option__text">4,000円</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="option__parm parm fadeIn">
+                        <h3 class="option__subtitle">Parm</h3>
+                        <dl class="option__list">
+                            <div class="option__item">
+                                <dt class="option__category">パーマ</dt>
+                                <dd class="option__text">4,600円</dd>
+                            </div>
+
+                            <div class="option__item">
+                                <dt class="option__category">ポイント</dt>
+                                <dd class="option__text">4,000円</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="option__shave shave fadeIn">
+                        <h3 class="option__subtitle">Shave</h3>
+                        <dl class="option__list">
+                            <div class="option__item">
+                                <dt class="option__category">メンズ</dt>
+                                <dd class="option__text">1,600円</dd>
+                            </div>
+                            <div class="option__item">
+                                <dt class="option__category">レディース</dt>
+                                <dd class="option__text">2,000円</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="option__care care fadeIn">
+                        <h3 class="option__subtitle">Care</h3>
+                        <dl class="option__list">
+                            <div class="option__item">
+                                <dt class="option__category">3Stepsシステム<br>トリートメント</dt>
+                                <dd class="option__text">3,000円</dd>
+                            </div>
+                            <div class="option__item">
+                                <dt class="option__category">髪質改善酸熱<br>トリートメント</dt>
+                                <dd class="option__text">4,000円</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cource">
+            <div class="cource__inner">
+                <h2 class="cource__title fadeIn">COURCE</h2>
+                <div class="cource__list">
+                    <div class="cource__color list fadeIn">
+                        <h3 class="list__title">カラーフルコース</h3>
+                        <ul class="list__set">
+                            <li class="list__item">3Stepsシステムトリートメント</li>
+                            <li class="list__item">カラー</li>
+                            <li class="list__item">カット</li>
+                            <li class="list__item">シェービング</li>
+                        </ul>
+
+                        <div class="list__price-container">
+                            <dl class="list__price">
+                                <div class="usual">
+                                    <dt class="usual__category">通常価格</dt>
+                                    <dd class="usual__text">10,000円</dd>
+                                </div>
+                            </dl>
+                            <div class="arrow">
+                                <p class="arrow__icon">▶︎</p>
+                            </div>
+                            <dl class="list__price">
+                                <div class="special">
+                                    <dt class="special__category">平日限定価格</dt>
+                                    <dd class="special__text">8,400円</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                    <div id="scalp" class="cource__scalp list fadeIn">
+                        <h3 class="list__title">毛穴クレンジングスカルプフルコース</h3>
+                        <ul class="list__set">
+                            <li class="list__item">頭皮毛穴クレンジング</li>
+                            <li class="list__item">カット</li>
+                            <li class="list__item">シャンプー</li>
+                            <li class="list__item">栄養集中トリートメント</li>
+                            <li class="list__item">シェービング</li>
+                        </ul>
+
+                        <div class="list__price-container">
+                            <dl class="list__price">
+                                <div class="usual">
+                                    <dt class="usual__category">通常価格</dt>
+                                    <dd class="usual__text">4,200円</dd>
+                                </div>
+                            </dl>
+                            <div class="arrow">
+                                <p class="arrow__icon">▶︎</p>
+                            </div>
+                            <dl class="list__price">
+                                <div class="special">
+                                    <dt class="special__category">平日限定価格</dt>
+                                    <dd class="special__text">3,500円</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="all500">
+            <div class="all500__inner">
+                <h2 class="all500__title fadeIn">ALL<span aria-label="500円">¥500</span> MENU</h2>
+                <div class="all500__list">
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">毛穴クレンジング炭酸シャンプー</dt>
+                        <dd class="card__text">頭皮の毛穴汚れがスッキリ！<br>フケ・かゆみ・抜け毛が<br>
+                            気になる方にオススメです！</dd>
+                    </dl>
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">ミルボン(4週間分)<br>
+                            ご自宅トリートメント</dt>
+                        <dd class="card__text">ご自宅用トリートメント<br>１週間に１度の簡単ステップ♪<br>
+                            3Stepsトリートメントとセットでの<br>ご使用がオススメです！</dd>
+                    </dl>
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">フェイスマッサージ</dt>
+                        <dd class="card__text">表情筋をほぐすことでお顔の<br>
+                            血行改善、むくみ解消、たるみ改善<br>
+                            様々な効果が期待できます♪</dd>
+                    </dl>
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">ヘアケアコラーゲン</dt>
+                        <dd class="card__text">カラー剤で傷みがちな髪へ！<br>
+                            カラー剤に入れるだけで髪を保湿し<br>
+                            傷みを最大限おさえます。</dd>
+                    </dl>
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">フェイスパック</dt>
+                        <dd class="card__text">お肌の水分補給でぷるぷる肌へ！<br>
+                            アルコール不使用で敏感肌の方も◎</dd>
+                    </dl>
+                    <dl class="all500__item card fadeIn">
+                        <dt class="card__title">栄養集中トリートメント</dt>
+                        <dd class="card__text">頭皮と髪へ栄養と潤いを与え<br>
+                            育毛効果を最大限に引き出します！<br>
+                            毛穴クレンジングとセットでの<br>
+                            ご使用がオススメです♪
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <div class="question__inner">
+                <h3 class="question__title">Q&A</h3>
+                <div class="question__list">
+                    <div class="question__item">
+                        <a class="question__btn">
+                            <div class="question__description"><span class="question__mark">Q.</span>シェービングってどんな効果があるの？
+                            </div><span class="question__arrow">▼</span>
+                        </a>
+                        <div class="question__content">
+                            <div class="question__content-inner">
+                                <div class="question__answer">
+                                    <p class="question__mark">A.</p>
+                                    <p class="question__catch">お肌の固くなった古い角質・産毛まで綺麗に取り除く事が出来ます。</span>
+                                </div>
+                                <p class="question__text">
+                                    お肌の毛は想像よりも生えているもので、剃った後はお肌の色味も1トーンアップし、艶々の肌触りを是非感じてみて下さい。メイクのノリや美白効果、ツヤ、ニキビ予防など様々な効果が期待出来ます♪
+                                </p>
+                                <div class="question__flex-container">
+                                    <p class="question__price">
+                                        メンズシェービング・・・・1,600円<br>
+                                        レディースシェービング・・2,000円
+                                    </p>
+                                    <div class="question__pic-shaving">
+                                        <picture>
+                                            <source type="image/webp" srcset="./image/shaving.webp"
+                                                alt="シェービングされている女性の写真">
+                                            <img src="./image/shaving.png" alt="シェービングされている女性の写真">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question__item"><a class="question__btn">
+                            <div class="question__description">
+                                <span class="question__mark">Q.</span>毛穴クレンジング炭酸シャンプーってなに？
+                            </div>
+                            <span class="question__arrow">▼</span>
+                        </a>
+                        <div class="question__content">
+                            <div class="question__content-inner">
+                                <div class="question__answer">
+                                    <p class="question__mark">A.</p>
+                                    <p class="question__catch">
+                                        通常のシャンプーでは落としきれない毛穴の汚れや皮脂を、濃密な炭酸泡でしっかりと取り除くことができるシャンプーです。</p>
+                                </div>
+                                <p class="question__text">
+                                    炭酸の細かい泡が毛穴の奥まで届き、汚れを浮かせて洗い流すため、頭皮がすっきりと清潔に保たれます。
+                                    さらに、炭酸が頭皮の血行を促進し、硬くなった頭皮を柔らかくすることで、健康的な頭皮環境に整えます。ぜひお試しください！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question__item"><a class="question__btn">
+                            <div class="question__description">
+                                <span class="question__mark">Q.</span>フェードカットってなに？
+                            </div>
+                            <span class="question__arrow">▼</span>
+                        </a>
+                        <div class="question__content">
+                            <div class="question__content-inner">
+                                <div class="question__answer">
+                                    <p class="question__mark">A.</p>
+                                    <p class="question__catch">フェードカットは、髪の長さを段階的に短くしていくスタイルです。
+                                    </p>
+                                </div>
+                                <p class="question__text">
+                                    特に、サイドや襟足を短く刈り上げ、トップに向かうにつれ徐々に髪が長くなるのが特徴です。グラデーションのように髪がなだらかに変化していくため、シャープでスッキリとした印象を与えます。
+
+                                    フェードカットは、硬派で男らしい印象を好む方に特に人気があります。サイドや襟足がしっかりと短くなるため、清潔感があり、顔の輪郭を引き立てて見せる効果もあります。シンプルでありながら洗練された印象を与えるため、幅広いシーンで活躍する髪型として選ばれています。
+                                </p>
+                                <div class="question__pic-fadecut">
+                                    <picture>
+                                        <source type="image/webp" srcset="./image/fadecut1.webp" alt="フェードカットされたモデルの写真">
+                                        <img src="./image/fadecut1.jpg" alt="フェードカットされたモデルの写真">
+                                    </picture>
+                                    <picture>
+                                        <source type=" image/webp" srcset="./image/fadecut2.webp"
+                                            alt="フェードカットされたモデルの写真">
+                                        <img src="./image/fadecut2.jpg" alt="フェードカットされたモデルの写真">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="drink">
+            <div class="drink__inner">
+                <h3 class="drink__title fadeIn">ドリンク無料サービス</h3>
+                <div class="drink__desktop fadeIn">
+                    <img src="./image/drinkfree.png"
+                        alt="コーヒー(アイスまたはホット)、紅茶(アイスまたはホット)、お茶(アイスまたはホット)、抹茶ラテ(ホット)、ココア(ホット)、アップル(アイス)">
+                </div>
+                <div class="drink__mobile">
+                    <div class="drink__board"><img src="./image/drinkboard.png" alt="ドリンク無料サービスと書かれたボードのイラスト"></div>
+                    <div class="drink__menu"><img src="./image/drinkmenu.png"
+                            alt="コーヒー(アイスまたはホット)、紅茶(アイスまたはホット)、お茶(アイスまたはホット)、抹茶ラテ(ホット)、ココア(ホット)、アップル(アイス)"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="access" class="footer">
+        <section class="footerInfo">
+            <div class="footerInfo__inner">
+                <div class="footerInfo__map fadeIn">
+                    <iframe title="Googleマップ埋め込み"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13074.755707061295!2d136.6416282!3d34.9894558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60038f9e1160b8cf%3A0x20674213593c2bd9!2z44Kr44OD44OI44K144Ot44Oz44OL44Kz5Zub5pel5biCKGN1dCBzYWxvbiAtbmljby0gKQ!5e0!3m2!1sja!2sjp!4v1733288875441!5m2!1sja!2sjp"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="footerInfo__data">
+                    <div class="access">
+                        <h2 class="access__title fadeIn">ACCESS</h2>
+                        <dl class="access__list fadeIn">
+                            <div class="access__item">
+                                <dt class="access__category">所在地</dt>
+                                <dd class="access__text">三重県四日市市白須賀1丁目13-1</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div id="contact" class="contact">
+                        <h2 class="contact__title fadeIn">CONTACT</h2>
+                        <p class="contact__tel">TEL:059-333-5160</p>
+                        <dl class="contact__list fadeIn">
+                            <div class="contact__item">
+                                <dt class="contact__category">受付時間</dt>
+                                <dd class="contact__text">9:00 – 19:00</dd>
+                            </div>
+                            <div class="contact__item">
+                                <dt class="contact__category">定休日</dt>
+                                <dd class="contact__text">毎週水曜日、第2・第4木曜日</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="footerInfo__logo logo fadeIn"><img src="./image/logo.svg" alt="カットサロンニコ"></div>
+            </div>
+        </section>
+
+        <div class="footerEnd">
+            <div class="footerEnd__inner">
+                <div class="footerNav fadeIn">
+                    <ul class="footerNav__list">
+                        <li class="footerNav__item"><a href="./privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footerEnd__copy fadeIn"><small>Copyright &copy; 2023 cut salon nico All Rights
+                        Reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/ham-menu.js"></script>
+    <script src="./js/smooth-scroll.js" defer></script>
+    <script src="./js/question-btn.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        ScrollReveal().reveal('.fadeIn', {
+            viewFactor: 0.2, // 0~1,どれくらい見えたら実行するか
+            reset: false
+        });
+    </script>
+</body>
+
+</html>

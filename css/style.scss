@@ -1,0 +1,2613 @@
+@charset "utf-8";
+
+$color-main: #724B10;
+$color-base: #F6F1ED;
+$color-sub: #E1D9D2;
+$color-footer: #B69472;
+$color-btn: #906F3F;
+$color-tertiary: #DCCBBE;
+$color-border: #D5D5D5;
+$color-nav: #cf6d2b;
+
+$breakpoints: (
+    "tablet": "(640px <= width)",
+    "desktop": "(1000px <= width)",
+    "full": "(1200px <= width)",
+    ) !default;
+
+@mixin m-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin m-inner($w: 90%, $mw: 1300px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin m-flex($a: center, $j: space-between, $f: wrap) {
+    display: flex;
+    flex-wrap: $f;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin m-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin m-title-main($s: f-rem(24), $m: (80em/44)) {
+    margin-bottom: $m;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $s;
+    text-align: center;
+}
+
+@mixin m-title-sub($s: f-rem(36), $mb: (50em/36), $t: center) {
+    margin-bottom: $mb;
+    font-size: $s;
+    font-weight: bold;
+    text-align: $t;
+}
+
+@mixin m-title-mainvisual($s: f-rem(48), $p: (250em/80) 0 (120em/80)) {
+    padding: $p;
+    font-size: $s;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+@mixin m-menulist {
+    margin-bottom: (20em/16
+    );
+background-color: #fff;
+
+@include m-query(desktop) {
+    width: (610/1300)*100%;
+    margin-bottom: (70em/16);
+}
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+body {
+    font-size: f-rem(16);
+    font-family: "Yu Mincho", "MS Mincho", "Hiragino Mincho Pro", serif;
+    line-height: (27/16);
+    letter-spacing: (50em/1000);
+    color: $color-main;
+    background-color: $color-base;
+    text-align: justify;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+/*header*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+
+    &__inner {
+        @include m-inner();
+        @include m-flex();
+        padding: (18em/15) 0;
+    }
+}
+
+/*nav*/
+.nav {
+    display: none;
+    font-family: "Noto Sans JP", "default-font-M", serif;
+    font-size: f-rem(15);
+
+    @media(min-width:1100px) {
+        display: block;
+    }
+
+    &__list {
+        @include m-flex();
+    }
+
+    &__item {
+        margin-left: (50em/15);
+        font-weight: bold;
+
+        &:first-child {
+            a::before {
+                content: "ホーム";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(2) {
+            a::before {
+                content: "お店について";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(3) {
+            a::before {
+                content: "メニュー";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(4) {
+            a::before {
+                content: "店舗情報";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(5) {
+            a::before {
+                content: "アクセス";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        &:nth-child(6) {
+            a::before {
+                content: "お問い合わせ";
+                font-size: f-rem(12);
+                display: block;
+                text-align: center;
+            }
+        }
+
+        a {
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            transition: color .4s;
+        }
+
+        a::after {
+            bottom: -2px;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+            width: 100%;
+            border-bottom: 2px solid $color-nav;
+        }
+
+        a:hover {
+            color: $color-nav;
+        }
+
+        a:hover::after {
+            transform: scale(1, 1);
+        }
+
+        &:last-child a:hover::after {
+            transform: scale(0, 1);
+        }
+    }
+
+    #active {
+        color: $color-nav;
+        border-bottom: 2px solid $color-nav;
+    }
+}
+
+.instagram-icon {
+    margin-left: auto;
+    padding-left: 50px;
+
+    img {
+        width: 38px;
+        height: auto;
+    }
+}
+
+/*humburger-menu*/
+.ham {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: $color-footer;
+    transition: height 0.4s ease-in-out;
+    z-index: 1000;
+
+    @media(min-width:1100px) {
+        display: none;
+    }
+
+    &--isOpen {
+        height: 100vh;
+
+        .ham__item {
+            animation: fadeInUp 0.5s ease-in-out forwards;
+        }
+    }
+
+    &__btn {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        border: none;
+        z-index: 1100;
+    }
+
+    span {
+        display: block;
+        width: 70%;
+        margin: auto;
+        height: 4px;
+        background-color: $color-main;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc((100% - 4px) / 2);
+        border-radius: 3px;
+        transition: 0.2s;
+    }
+
+    &__lineTop {
+        transform: translateY(-10px);
+    }
+
+    &__lineMiddle {
+        transform: translateY(0);
+    }
+
+    &__lineBottom {
+        transform: translateY(10px);
+    }
+
+    &--isOpen .ham__lineTop {
+        transform: rotate(45deg);
+    }
+
+    &--isOpen .ham__lineMiddle {
+        opacity: 0;
+    }
+
+    &--isOpen .ham__lineBottom {
+        transform: rotate(-45deg);
+    }
+
+    &__nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-footer;
+        z-index: 1000;
+        transition: top 0.5s ease-in-out;
+    }
+
+    &--isOpen .ham__nav {
+        top: 0;
+    }
+
+    &__list {
+        border-bottom: 1px solid #fff;
+        margin: 0;
+        padding: (10em/18) 0;
+        line-height: (26/18);
+        font-size: f-rem(18);
+
+        &:first-child {
+            a::after {
+                content: "ホーム";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+        &:nth-child(2) {
+            a::after {
+                content: "お店について";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+        &:nth-child(3) {
+            a::after {
+                content: "メニュー";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+        &:nth-child(4) {
+            a::after {
+                content: "店舗情報";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+        &:nth-child(5) {
+            a::after {
+                content: "アクセス";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+        &:nth-child(6) {
+            a::after {
+                content: "お問い合わせ";
+                display: block;
+                font-size: f-rem(14);
+            }
+        }
+
+    }
+
+    .instagram-menu {
+        padding: (17em/16) 0;
+    }
+
+    &__item {
+        padding-top: (70em/18);
+        text-align: center;
+        letter-spacing: 0.17em;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        transform: translateY(-30px);
+    }
+
+    &__item a {
+        text-decoration: none;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    img {
+        margin-right: 18px;
+        width: 30px;
+        height: auto;
+    }
+}
+
+/*footer*/
+.footer {
+    .footerInfo {
+        color: $color-main;
+        background-color: #fff;
+
+        &__inner {
+            @include m-inner(80%);
+
+            @include m-query(desktop) {
+                @include m-flex();
+                @include m-inner();
+            }
+        }
+
+        &__data {
+            @include m-query(desktop) {
+                width: (580/1300)*100%;
+                padding-top: (120em/16);
+            }
+        }
+
+        &__map {
+            width: 100%;
+            margin-bottom: (40em/16);
+            padding-top: (80em/16);
+
+            @include m-query(desktop) {
+                width: (640/1300)*100%;
+                margin-bottom: 0;
+                padding-top: (125em/16);
+            }
+
+            iframe {
+                height: 220px;
+
+                @include m-query(desktop) {
+                    height: (400em/16);
+                }
+            }
+        }
+
+        &__logo {
+            margin-top: (50em/16);
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: (60em/16);
+
+            @include m-query(desktop) {
+                margin-top: (32em/16);
+                padding: (60em/16) 0;
+            }
+        }
+    }
+
+    .access__list,
+    .contact__list {
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+
+    .access {
+        padding: 0 0 (40em/16);
+        border-bottom: 1px solid;
+
+        &__title {
+            padding-bottom: (14em/18);
+            font-size: f-rem(18);
+            font-weight: bold;
+
+            @include m-query(desktop) {
+                font-size: f-rem(30);
+            }
+
+            &::after {
+                content: "-アクセス-";
+                padding-left: (20em/20);
+                font-size: f-rem(18);
+
+                @include m-query(desktop) {
+                    font-size: f-rem(20);
+                }
+            }
+        }
+
+        &__item {
+            @include m-query(desktop) {
+                display: flex;
+            }
+        }
+
+        &__text {
+            @include m-query(desktop) {
+                padding-left: (36em/16);
+            }
+        }
+    }
+
+    .contact {
+        padding: (40em/16) 0 0;
+
+        &__title {
+            padding-bottom: (14em/18);
+            font-size: f-rem(18);
+            font-weight: bold;
+
+            @include m-query(desktop) {
+                font-size: f-rem(30);
+            }
+
+            &::after {
+                content: "-お問い合わせ-";
+                font-size: f-rem(16);
+                padding-left: (20em/20);
+
+                @include m-query(desktop) {
+                    font-size: f-rem(20);
+                }
+            }
+        }
+
+        &__tel {
+            font-size: f-rem(24);
+            font-weight: bold;
+
+            @include m-query(desktop) {
+                font-size: f-rem(45);
+            }
+        }
+
+        &__item {
+            display: flex;
+        }
+
+        &__text {
+            padding-left: (36em/16);
+        }
+    }
+
+    .footerEnd {
+        padding: (45em/16) 0;
+        color: #fff;
+        background-color: $color-footer;
+
+        &__inner {
+            @include m-inner();
+        }
+
+        .footerNav {
+            padding-bottom: (30em/16);
+
+            @include m-query(desktop) {
+                padding-bottom: (60em/16);
+            }
+
+            &__list {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            &__item {
+                padding-left: (20em/11);
+                font-size: f-rem(11);
+
+                @include m-query(desktop) {
+                    padding-left: (40em/14);
+                    font-size: f-rem(14);
+                }
+            }
+        }
+
+        &__copy {
+            text-align: center;
+            font-size: f-rem(10);
+
+            @include m-query(desktop) {
+                font-size: f-rem(14);
+            }
+        }
+    }
+}
+
+/*module--------------------------------*/
+
+.logo {
+    width: 90px;
+    height: vh;
+
+    @include m-query(desktop) {
+        width: 140px;
+        height: auto;
+    }
+}
+
+.btn {
+    display: block;
+    position: relative;
+    width: 200px;
+    padding: (12em/17) 0;
+    font-family: "Noto Sans JP", "default-font-M", serif;
+    font-size: f-rem(16);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50px;
+    color: $color-main;
+    border: 1px solid $color-btn;
+    transition: color 0.5s, background-color 0.5s;
+
+    @include m-query(desktop) {
+        width: 260px;
+        padding: (17em/17) 0;
+        font-size: f-rem(17);
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: $color-btn;
+    }
+}
+
+.visual {
+    margin-bottom: (50em/16);
+
+    @include m-query(desktop) {
+        margin-bottom: (100em/16);
+    }
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-title-mainvisual();
+        position: relative;
+        z-index: 3;
+        line-height: (100/80);
+
+        @include m-query(desktop) {
+            @include m-title-mainvisual(f-rem(80), (250em/80) 0 (160em/80));
+        }
+
+        &::after {
+            display: block;
+            content: attr(data-label);
+            font-size: f-rem(18);
+            font-weight: bold;
+            color: #fff;
+
+            @include m-query(desktop) {
+                font-size: f-rem(26);
+            }
+        }
+    }
+}
+
+.postItem {
+    border-bottom: 1px solid $color-main;
+    padding: (40em/16) 0;
+
+    &:first-child {
+        padding: 0 0 (40em/16);
+    }
+
+    &__category {
+        font-size: f-rem(20);
+        margin-bottom: (10em/16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(28);
+        }
+
+        span {
+            font-size: f-rem(18);
+            color: $color-footer;
+            padding-right: 30px;
+
+            @include m-query(desktop) {
+                font-size: f-rem(26);
+            }
+        }
+    }
+}
+
+.menuItem {
+    @include m-flex();
+    margin-bottom: (30em/18);
+    padding: (10em/18) (20em/18);
+    background-color: #fff;
+
+    &__price {
+        @include m-flex();
+        width: 100%;
+        margin-bottom: (10em/16);
+    }
+
+    &__category {
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__text {
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__example {
+        display: block;
+        font-size: f-rem(13);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+}
+
+table {
+    width: 100%;
+    @include m-center();
+    background-color: #fff;
+
+    @include m-query(desktop) {
+        width: auto;
+    }
+
+    .thead {
+        display: none;
+
+        @include m-query(desktop) {
+            display: table-header-group;
+            padding: (20em/16);
+            background-color: $color-tertiary;
+
+            .th {
+                font-size: f-rem(17);
+                text-align: center;
+                border: none;
+                border-left: 1px solid $color-base;
+                margin-left: auto;
+                margin-right: auto;
+                padding: (12em/18);
+                vertical-align: middle;
+
+                &:first-child {
+                    border-left: none;
+                }
+            }
+        }
+    }
+
+    .tbody {
+        .tr {
+            font-size: f-rem(18);
+
+            @include m-query(desktop) {
+                font-size: f-rem(24);
+            }
+
+            &:first-child {
+                dd {
+                    @include m-query(desktop) {
+                        border-top: none;
+                    }
+                }
+            }
+
+            &:nth-child(4),
+            &:last-child {
+
+                .td:nth-child(3),
+                .td:last-child {
+                    display: none;
+
+                    @include m-query(desktop) {
+                        display: table-cell;
+                    }
+                }
+            }
+
+            &:last-child {
+
+                .th,
+                .td {
+                    border-bottom: none;
+                }
+
+            }
+
+            .th {
+                font-size: f-rem(21);
+
+                @include m-query(desktop) {
+                    font-size: f-rem(24);
+                }
+            }
+        }
+
+        .th,
+        .td {
+            display: block;
+
+            @include m-query(desktop) {
+                display: table-cell;
+            }
+        }
+
+        .th {
+            background-color: $color-tertiary;
+            text-align: center;
+            color: $color-main;
+
+            @include m-query(desktop) {
+                background-color: #fff;
+                color: $color-main;
+            }
+        }
+
+        .td {
+            font-size: f-rem(20);
+
+            @include m-query(desktop) {
+                font-size: f-rem(24);
+            }
+        }
+
+        .td::before {
+            content: attr(data-label);
+            display: block;
+            font-size: f-rem(15);
+            margin-bottom: (4em/15);
+
+            @include m-query(desktop) {
+                content: "";
+            }
+        }
+    }
+
+    .th {
+        text-align: center;
+        border-left: 0;
+        padding: (10em/16);
+
+        @include m-query(desktop) {
+            width: 250px;
+            padding: (16em/16);
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+    .td {
+        min-height: 100px;
+        text-align: center;
+        border-bottom: 1px solid $color-border;
+        padding: (14em/16);
+        font-family: "Noto Serif JP", serif;
+
+        @include m-query(desktop) {
+            min-width: unset;
+            padding: (18em/16);
+            border: 1px solid $color-border;
+        }
+
+        &:last-child {
+            border-right: none;
+            border-bottom: none;
+        }
+    }
+
+}
+
+.list {
+    margin-bottom: (20em/16);
+    padding: (42em/16) (30em/16);
+    background-color: #fff;
+
+    @include m-query(desktop) {
+        padding: (60em/16) (30em/16);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: (60em/16);
+    }
+
+    &__title {
+        margin-bottom: (40em/27);
+        padding-bottom: (10em/27);
+        font-size: f-rem(20);
+        border-bottom: 1px solid $color-tertiary;
+        text-align: center;
+
+        @include m-query(desktop) {
+            font-size: f-rem(27);
+        }
+    }
+
+    &__set {
+        margin-bottom: (50em/20);
+        font-size: f-rem(16);
+        text-align: center;
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__item {
+        &::after {
+            content: "+";
+            display: block;
+        }
+
+        &:last-child {
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    &__price-container {
+        @include m-flex(flex-end, center, nowrap);
+        width: (410/450)*100%;
+        @include m-center();
+
+        @include m-query(desktop) {
+            width: (360/450)*100%;
+        }
+
+        .arrow {
+            &__icon {
+                padding-bottom: (12em/24);
+                font-size: f-rem(24);
+
+                @include m-query(desktop) {
+                    padding-bottom: (16em/40);
+                    font-size: f-rem(40);
+                }
+            }
+        }
+    }
+
+    &__price {
+        line-height: 1;
+
+        .usual {
+            width: 110px;
+            text-align: center;
+
+            @include m-query(desktop) {
+                width: 200px;
+            }
+
+            &__category {
+                margin-bottom: (10em/16);
+
+                @include m-query(desktop) {
+                    margin-bottom: (20em/18);
+                    font-size: f-rem(18);
+                }
+            }
+
+            &__text {
+                font-size: f-rem(24);
+
+                @include m-query(desktop) {
+                    font-size: f-rem(38);
+                }
+            }
+        }
+
+        .special {
+            width: 125px;
+            text-align: center;
+            position: relative;
+
+            @include m-query(desktop) {
+                width: 220px;
+            }
+
+            &__category {
+                margin-bottom: (10em/16);
+
+                @include m-query(desktop) {
+                    margin-bottom: (14em/18);
+                    font-size: f-rem(22);
+                }
+            }
+
+            &__text {
+                font-size: f-rem(32);
+
+                @include m-query(desktop) {
+                    font-size: f-rem(48);
+                }
+            }
+        }
+    }
+}
+
+.card {
+    padding: (42em/16) (30em/16);
+    background-color: #fff;
+
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    gap: 0;
+
+    @include m-query(desktop) {
+        padding: (50em/16);
+    }
+
+    &__title {
+        margin-bottom: (20em/16);
+        padding-bottom: (6em/16);
+        font-size: f-rem(18);
+        border-bottom: 1px solid $color-tertiary;
+        text-align: center;
+        align-self: flex-end;
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__text {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+}
+
+/*index.html--------------------------------*/
+/*top-mainvisual*/
+.top-mainvisual-container {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    background: url(../image/interior.png) no-repeat center center /cover;
+    animation: zoomOut 3s ease-out forwards, fadeIn 2.5s forwards;
+
+    @include m-query(desktop) {
+        height: 99vh;
+    }
+}
+
+.top-mainvisual {
+    margin-bottom: 0;
+
+    @include m-query(desktop) {
+        padding: 0;
+    }
+
+    .scroll-indicator {
+        display: none;
+
+        @include m-query(desktop) {
+            display: block;
+            position: absolute;
+            right: 10%;
+            bottom: 12%;
+            writing-mode: vertical-rl;
+            font-weight: bold;
+            color: $color-main;
+        }
+    }
+
+    //線のアニメーション部分
+    .scroll-indicator::before {
+        animation: scroll 2s infinite;
+        background-color: $color-main;
+        bottom: -115px;
+        content: "";
+        height: 100px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: 2px;
+    }
+
+    /* 線のアニメーション */
+    @keyframes scroll {
+        0% {
+            transform: scale(1, 0);
+            transform-origin: 0 0;
+        }
+
+        50% {
+            transform: scale(1, 1);
+            transform-origin: 0 0;
+        }
+
+        51% {
+            transform: scale(1, 1);
+            transform-origin: 0 100%;
+        }
+
+        100% {
+            transform: scale(1, 0);
+            transform-origin: 0 100%;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: .4;
+            filter: blur(4px);
+        }
+
+        100% {
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+}
+
+/*about*/
+.about {
+    background-color: #fff;
+    padding: (100em/16) 0;
+    border-radius: 0 0 0 80px;
+
+    @include m-query(desktop) {
+        padding: (200em/16) 0 (100em/16);
+        border-radius: 0 0 0 160px;
+    }
+
+    &__inner {
+        @include m-inner(80%);
+
+        @include m-query(desktop) {
+            @include m-inner();
+        }
+    }
+
+    &__content {
+        @include m-query(desktop) {
+            @include m-flex();
+        }
+    }
+
+    &__title {
+        @include m-title-main();
+
+        @include m-query(desktop) {
+            @include m-title-main(f-rem(50));
+        }
+
+        &::after {
+            content: "お店について";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(24);
+                line-height: (18/24);
+            }
+        }
+    }
+
+    &__text {
+        @include m-query(desktop) {
+            width: (430/1300)*100%;
+        }
+    }
+
+    .shopname {
+        margin-bottom: (46em/16);
+
+        &__english {
+            font-size: f-rem(32);
+            font-weight: bold;
+
+            white-space: nowrap;
+
+            @include m-query(desktop) {
+                font-size: f-rem(48);
+            }
+        }
+
+        &__japanese {
+            font-size: f-rem(20);
+            font-weight: bold;
+
+            @include m-query(desktop) {
+                font-size: f-rem(24);
+            }
+        }
+    }
+
+    &__catch {
+        margin-bottom: (48em/23);
+        font-size: f-rem(18);
+        line-height: (34/20);
+
+        @include m-query(desktop) {
+            font-size: f-rem(23);
+            line-height: (60/23);
+        }
+
+        .desktop {
+            display: none;
+
+            @media (min-width:1380px) {
+                display: block;
+            }
+        }
+
+        .transition-point {
+            display: none;
+
+            @media (min-width:1000px)and(max-width:1380px) {
+                display: block;
+            }
+        }
+    }
+
+    .btn {
+        margin-bottom: (60em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__pic {
+        @include m-query(desktop) {
+            width: (750/1300)*100%;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .scroll_up {
+        animation-name: scroll_up;
+        animation-delay: 1500ms;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+/*menu*/
+.menu {
+    padding: (300em/44) 0;
+
+    &__inner {
+        @include m-inner();
+
+        @include m-query(desktop) {
+            @include m-inner();
+        }
+    }
+
+    &__title {
+        @include m-title-main();
+
+        @include m-query(desktop) {
+            @include m-title-main(f-rem(50), (50em/50));
+        }
+
+        &::after {
+            content: "メニュー";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(24);
+                line-height: (18/24);
+            }
+        }
+    }
+
+    &__maintitle {
+        font-size: f-rem(28);
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: (20em/20);
+
+        @include m-query(desktop) {
+            font-size: f-rem(36);
+        }
+
+        &::after {
+            content: "基本メニュー";
+            display: block;
+            line-height: (16/16);
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+            }
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: (20em/20);
+        font-size: f-rem(20);
+        font-weight: bold;
+        text-align: center;
+
+        @include m-query(desktop) {
+            padding-bottom: (34em/34);
+            font-size: f-rem(34);
+        }
+
+        &::after {
+            content: "その他のメニュー";
+            display: block;
+            line-height: (16/16);
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+            }
+        }
+    }
+
+    &__main {
+        margin-bottom: (50em/16);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m-query(desktop) {
+            width: 80%;
+        }
+    }
+
+    &__option {
+        @include m-center();
+        margin-bottom: (60em/16);
+
+        @include m-query(desktop) {
+            width: (600/1000)*100%;
+            margin-bottom: (40em/16);
+        }
+    }
+
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__pic {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: (60em/16);
+        transition: box-shadow .4s ease-in-out;
+
+        @include m-query(desktop) {
+            width: 45vw;
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+        }
+    }
+}
+
+
+/*shopinfo*/
+.shopinfo {
+    padding: (300em/44) 0;
+    background-color: #fff;
+    border-radius: 0 0 80px 0;
+
+    @include m-query(desktop) {
+        border-radius: 0 0 160px 0;
+    }
+
+    &__inner {
+        @include m-inner(80%);
+
+        @include m-query(desktop) {
+            @include m-inner();
+        }
+    }
+
+    &__title {
+        @include m-title-main();
+
+        @include m-query(desktop) {
+            @include m-title-main(f-rem(50));
+        }
+
+        &::after {
+            content: "店舗情報";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(22);
+                line-height: (18/24);
+            }
+        }
+    }
+
+    &__content {
+        @include m-query(desktop) {
+            @include m-flex();
+        }
+    }
+
+    &__unit {
+        margin-bottom: (100em/16);
+        text-align: center;
+
+        @include m-query(desktop) {
+            width: (350/1000)*100%;
+            margin-bottom: 0;
+        }
+
+        .btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__point {
+        @include m-query(desktop) {
+            width: (530/1000)*100%;
+        }
+    }
+
+    &__category {
+        font-size: f-rem(20);
+        font-weight: bold;
+        margin-bottom: (8em/20);
+
+        @include m-query(desktop) {
+            font-size: f-rem(30);
+        }
+
+        &::after {
+            content: "-営業時間-";
+            font-size: f-rem(16);
+            display: block;
+            line-height: (18/18);
+
+            @include m-query(desktop) {
+                font-size: f-rem(18);
+            }
+        }
+    }
+
+    &__text {
+        font-size: f-rem(32);
+        font-weight: bold;
+
+        @include m-query(desktop) {
+            font-size: f-rem(50);
+        }
+    }
+
+    &__closed {
+        margin-bottom: (38em/16);
+        font-size: f-rem(16);
+    }
+}
+
+/*instagram*/
+.instagram {
+    padding: (300em/44) 0;
+
+    @include m-query(desktop) {
+        padding: (300em/44) 0 0;
+    }
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-title-main();
+
+        @include m-query(desktop) {
+            @include m-title-main(f-rem(50), (10em/16));
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m-query(desktop) {
+            width: 90%;
+            padding-bottom: (90em/16);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include m-query(desktop) {
+                width: 85%;
+            }
+        }
+    }
+
+    &__item {
+        width: 50%;
+
+        @include m-query(desktop) {
+            width: (250/1000)*100%;
+        }
+    }
+
+    .pagelist {
+        display: flex;
+        width: 350px;
+        @include m-center();
+
+        &__item {
+            padding-left: (40em/18);
+        }
+
+        @include m-query(desktop) {
+            font-size: f-rem(18);
+        }
+    }
+}
+
+/*about.html--------------------------------*/
+/*about-mainvisual*/
+.about-mainvisual {
+    position: relative;
+    background: url(../image/interior.png) no-repeat center center /cover;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        opacity: 0.1;
+    }
+}
+
+/*concept*/
+.concept {
+    margin-bottom: (80em/16);
+
+    @include m-query(desktop) {
+        margin-bottom: (140em/16);
+        padding-bottom: 0;
+        border-bottom: none;
+        line-height: (38/16);
+    }
+
+    &__inner {
+        @include m-inner(80%);
+        margin-bottom: (40em/16);
+
+        @include m-query(desktop) {
+            @include m-inner();
+            margin-bottom: (60em/16);
+        }
+    }
+
+    &__content {
+        @include m-query(desktop) {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__catch {
+        margin-bottom: (16em/20);
+        font-size: f-rem(20);
+
+        @include m-query(desktop) {
+            margin-bottom: (6em/30);
+            font-size: f-rem(30);
+        }
+    }
+}
+
+.swiper-slide img {
+    border-radius: 10px;
+}
+
+/*serivces*/
+.services {
+    @include m-query(desktop) {
+        margin-bottom: (140em/16);
+        line-height: (38/16);
+    }
+
+    &__inner {
+        @include m-inner();
+    }
+}
+
+.services-menu {
+    margin-bottom: (50em/16);
+    padding-bottom: (40em/16);
+    border-bottom: 1px solid $color-tertiary;
+
+    @include m-query(tablet) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include m-query(desktop) {
+        width: 100%;
+        @include m-flex();
+        flex-wrap: nowrap;
+        margin-bottom: (60em/16);
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    &__pic {
+        margin-bottom: (16em/16);
+
+        @include m-query(desktop) {
+            width: 45%;
+            margin-bottom: 0;
+        }
+
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+
+            @include m-query(desktop) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m-query(tablet) {
+            width: 100%;
+        }
+
+        @include m-query(desktop) {
+            width: 45%;
+        }
+    }
+
+    &__catch {
+        margin-bottom: (10em/20);
+        font-size: f-rem(20);
+        line-height: (34/20);
+
+        @include m-query(desktop) {
+            font-size: f-rem(28);
+        }
+    }
+}
+
+.services-space {
+    margin-bottom: (50em/16);
+    padding-bottom: (40em/16);
+    border-bottom: 1px solid $color-tertiary;
+
+    @include m-query(tablet) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include m-query(desktop) {
+        width: 100%;
+        @include m-flex();
+        flex-wrap: nowrap;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    &__pic {
+        margin-bottom: (16em/16);
+
+        @include m-query(desktop) {
+            width: 45%;
+            margin-bottom: 0;
+        }
+
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+
+            @include m-query(desktop) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__content {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m-query(tablet) {
+            width: 100%;
+        }
+
+        @include m-query(desktop) {
+            width: 45%;
+        }
+
+        height: auto;
+    }
+
+    &__catch {
+        margin-bottom: (10em/20);
+        font-size: f-rem(20);
+
+        @include m-query(desktop) {
+            font-size: f-rem(28);
+            margin-bottom: (6em/28);
+        }
+    }
+}
+
+/*message*/
+.message {
+    &__inner {
+        @include m-inner();
+        margin-bottom: (60em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (140em/16);
+        }
+    }
+
+    &__content {
+        @include m-query(desktop) {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__text {
+        width: 90%;
+        margin-bottom: (20em/16);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m-query(tablet) {
+            width: 70%;
+        }
+
+        @include m-query(desktop) {
+            width: 100%;
+            margin-bottom: (60em/16);
+            line-height: (38/16);
+            text-align: center;
+        }
+    }
+
+    &__pic {
+        text-align: center;
+
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+
+            @include m-query(tablet) {
+                width: 70%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include m-query(desktop) {
+                width: 80%;
+            }
+        }
+    }
+}
+
+/*stamp*/
+.stamp {
+    padding: (50em/16) 0;
+    background-color: $color-sub;
+
+    @include m-query(desktop) {
+        width: (700/1000)*100%;
+        margin-left: auto;
+        border-radius: 60px 0 0 60px;
+    }
+
+    &__inner {
+        @include m-inner(80%);
+
+        @include m-query(desktop) {
+            display: flex;
+            @include m-inner();
+        }
+    }
+
+    &__content {
+        margin-bottom: (40em/16);
+
+        @include m-query(desktop) {
+            width: 30%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (24em/24), center);
+        font-weight: normal;
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(30), (10em/30), start);
+            font-weight: normal;
+            width: 400px;
+        }
+    }
+
+    &__text {
+        font-size: f-rem(14);
+
+        @include m-query(tablet) {
+            text-align: center;
+        }
+
+        @include m-query(desktop) {
+            width: 380px;
+            font-size: f-rem(16);
+            text-align: left;
+            line-height: (38/16);
+        }
+    }
+
+    &__pic {
+        @include m-flex(baseline, flex-end, nowrap);
+
+        @include m-query(tablet) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__front {
+        width: 50%;
+        margin-right: (10em/16);
+
+        @include m-query(desktop) {
+            width: 45%;
+            margin-right: 0;
+        }
+    }
+
+    &__back {
+        width: 45%;
+
+        @include m-query(desktop) {
+            width: 40%;
+            margin-left: (60em/16);
+        }
+    }
+}
+
+/*allinfo*/
+.allinfo {
+    margin-bottom: (60em/16);
+    padding-top: (120em/16);
+
+    &__inner {
+        @include m-inner(80%);
+
+        @include m-query(desktop) {
+            @include m-inner();
+            margin-bottom: (140em/16);
+            line-height: (38/16);
+        }
+    }
+
+    &__list {
+        @include m-center();
+
+        @include m-query(desktop) {
+            width: 1000px;
+        }
+    }
+
+    &__title {
+        margin-bottom: (20em/16);
+        font-size: f-rem(24);
+        text-align: center;
+        line-height: (24/16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(40);
+        }
+
+        &::after {
+            content: "店舗情報";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: (30em/16);
+        padding-bottom: (10em/16);
+        border-bottom: 1px solid $color-tertiary;
+
+        @include m-query(desktop) {
+            margin-bottom: (60em/16);
+            padding-bottom: (22em/16);
+            @include m-flex(normal, flex-start);
+        }
+    }
+
+    &__category {
+        width: 100px;
+        padding-bottom: (12em/16);
+        opacity: 0.7;
+
+        @include m-query(desktop) {
+            padding-bottom: 0;
+            font-size: f-rem(17);
+        }
+    }
+
+    &__text {
+        @include m-query(desktop) {
+            padding-left: (150em/16);
+            font-size: f-rem(17);
+        }
+    }
+}
+
+/*menu.html--------------------------------*/
+.menu-mainvisual {
+    background: url(../image/scissors.png) no-repeat center center /cover;
+}
+
+.menu-guidance {
+    &__inner {
+        @include m-inner(80%);
+
+        @include m-query(desktop) {
+            @include m-inner();
+        }
+    }
+
+    &__text {
+        margin-bottom: (60em/16);
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            margin-bottom: (60em/16);
+            font-size: f-rem(16);
+            line-height: (34/16);
+        }
+    }
+}
+
+.mainmenu {
+    &__inner {
+        @include m-inner(90%);
+        margin-bottom: (60em/16);
+
+        @include m-query(desktop) {
+            @include m-inner();
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (24em/24), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(36), (20em/24), center);
+        }
+
+        &::after {
+            content: "基本メニュー";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+            }
+        }
+    }
+
+    &__table {
+        @include m-center();
+    }
+}
+
+.option {
+    &__inner {
+        @include m-inner();
+        margin-bottom: (80em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(20), (20em/20), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(34), (20em/20), center);
+        }
+
+        &::after {
+            content: "その他のメニュー";
+            display: block;
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+            }
+        }
+    }
+
+    &__subtitle {
+        padding: (5em/16);
+        font-size: f-rem(22);
+        text-align: center;
+        background-color: $color-tertiary;
+
+        @include m-query(desktop) {
+            padding: (12em/16);
+            font-size: f-rem(24);
+        }
+    }
+
+    &__allmenu {
+        @include m-query(desktop) {
+            @include m-flex(flex-start);
+            flex-wrap: wrap;
+        }
+    }
+
+    &__color {
+        @include m-menulist();
+    }
+
+    &__parm {
+        @include m-menulist();
+    }
+
+    &__shave {
+        @include m-menulist();
+    }
+
+    &__care {
+        @include m-menulist();
+
+        .option__item::before {
+
+            @include m-query(desktop) {
+                border-bottom: 1px dotted;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        @include m-flex();
+        padding: (16em/16) 0;
+        font-size: f-rem(16);
+        border-bottom: 1px solid $color-border;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        @include m-query(desktop) {
+            padding: (20em/16) 0;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            border-bottom: 1px dotted;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__category {
+        padding: 0 1.75em 0 1.75em;
+        background-color: #fff;
+        position: relative;
+
+        @include m-query(desktop) {
+            padding: 0 3.75em 0 3.75em;
+        }
+    }
+
+    &__text {
+        padding: 0 1.75em 0 1.75em;
+        background-color: #fff;
+        position: relative;
+
+        @include m-query(desktop) {
+            padding: 0 3.75em 0 3.75em;
+        }
+    }
+}
+
+.color {
+    .option__subtitle {
+        &::after {
+            content: "/カラー";
+            font-size: f-rem(16);
+            padding-left: (6em/10);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+                padding-left: (10em/20);
+            }
+        }
+    }
+}
+
+.parm {
+    .option__subtitle {
+        &::after {
+            content: "/パーマ";
+            font-size: f-rem(16);
+            padding-left: (6em/10);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+                padding-left: (10em/20);
+            }
+        }
+    }
+}
+
+.shave {
+    .option__subtitle {
+        &::after {
+            content: "/シェービング";
+            font-size: f-rem(16);
+            padding-left: (6em/10);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+                padding-left: (10em/20);
+            }
+        }
+    }
+}
+
+.care {
+    .option__subtitle {
+        &::after {
+            content: "/ケア";
+            font-size: f-rem(16);
+            padding-left: (6em/10);
+
+            @include m-query(desktop) {
+                font-size: f-rem(20);
+                padding-left: (10em/20);
+            }
+        }
+    }
+}
+
+.cource {
+    &__inner {
+        @include m-inner(90%);
+        margin-bottom: (80em/16);
+
+        @include m-query(desktop) {
+            @include m-inner();
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (20em/20), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(36), (20em/24), center)
+        }
+    }
+
+    &__title::after {
+        content: "平日限定のお得なコース";
+        font-size: f-rem(16);
+        display: block;
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+}
+
+.all500 {
+    &__inner {
+        @include m-inner();
+        margin-bottom: (80em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (20em/20), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(36), (20em/24), center)
+        }
+
+        &::after {
+            content: "500円メニュー";
+            display: block;
+            font-size: f-rem(20);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        gap: (25em/16);
+
+        @include m-query(desktop) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: (45em/16);
+        }
+    }
+}
+
+.question {
+    &__inner {
+        @include m-inner();
+        margin-bottom: (80em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (20em/20), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(36), (20em/24), center)
+        }
+    }
+
+    &__title::before {
+        content: "よくある質問";
+        display: block;
+        font-size: f-rem(18);
+    }
+
+    &__list {
+        @include m-center();
+
+        @include m-query(desktop) {
+            width: (800/1000)*100%;
+        }
+    }
+
+    &__item {
+        margin-bottom: (18em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (30em/16);
+        }
+
+        &:nth-child(2) {
+            .question__text {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__btn {
+        padding: (12em/16);
+        font-size: f-rem(16);
+        background-color: $color-sub;
+        cursor: pointer;
+        @include m-flex();
+
+        @include m-query(desktop) {
+            padding: (24em/16);
+            font-size: f-rem(18);
+        }
+    }
+
+    &__description {
+        width: 280px;
+        display: flex;
+
+        @include m-query(tablet) {
+            width: auto;
+        }
+
+        @include m-query(desktop) {
+            width: auto;
+            font-size: f-rem(20);
+        }
+    }
+
+    &__mark {
+        padding-right: (10em/16);
+        font-size: f-rem(16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__arrow {
+        font-size: f-rem(18);
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+
+        transform: rotate(0deg);
+        transition-duration: 0.3s;
+
+        &.active {
+            transform: rotate(180deg);
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__content {
+        background-color: #fff;
+        padding: 0 (20em/16);
+        display: block grid;
+        transition: grid-template-rows 0.5s, padding 0.5s;
+        grid-template-rows: 0fr;
+
+        @include m-query(desktop) {
+            padding: 0 (36em/16);
+        }
+
+        &-inner {
+            overflow: hidden;
+        }
+
+        &.active {
+            padding: (20em/16);
+            grid-template-rows: 1fr;
+
+            @include m-query(desktop) {
+                padding: (36em/16);
+            }
+        }
+    }
+
+    &__answer {
+        display: flex;
+        margin-bottom: (20em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (10em/16);
+        }
+    }
+
+    &__catch {
+        font-size: f-rem(16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    &__text {
+        margin-bottom: (30em/16);
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+
+    &__flex-container {
+        @include m-flex(unset);
+        margin-top: (60em/16);
+    }
+
+    &__price {
+        margin-bottom: (30em/16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(20);
+        }
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+    &__pic-shaving {
+        @include m-query(desktop) {
+            width: 50%;
+        }
+
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    }
+
+    &__pic-fadecut {
+        text-align: center;
+
+        @include m-query(desktop) {
+            @include m-flex(center, space-between, nowrap);
+        }
+
+        img {
+            width: 80%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            margin-bottom: (30em/16);
+
+            @include m-query(desktop) {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+}
+
+.drink {
+    &__inner {
+        @include m-inner(90%);
+        margin-bottom: (80em/16);
+
+        @include m-query(desktop) {
+            @include m-inner();
+            margin-bottom: (115em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-sub(f-rem(24), (20em/20), center);
+
+        @include m-query(desktop) {
+            @include m-title-sub(f-rem(36), (20em/24), center)
+        }
+    }
+
+    &__desktop {
+        text-align: center;
+        display: none;
+
+        @include m-query(desktop) {
+            display: block;
+        }
+    }
+
+    &__mobile {
+        display: block;
+
+        @include m-query(desktop) {
+            display: none;
+        }
+    }
+
+    &__board {
+        width: 180px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*privacy.html---------------------------------*/
+/*privacy*/
+.privacy {
+    margin: (90em/14) 0;
+    line-height: (30/14);
+
+    @include m-query(desktop) {
+        margin: (160em/16) 0 (100em/16);
+        line-height: (32/16);
+    }
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__chapter {
+        margin-bottom: (50em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (60em/16);
+        }
+    }
+
+    &__title {
+        @include m-title-main(f-rem(22), (30em/16));
+        text-align: center;
+
+        @include m-query(desktop) {
+            font-size: f-rem(36);
+            margin-bottom: (20em/16);
+        }
+
+        &::after {
+            content: "個人情報保護方針";
+            display: block;
+            font-size: f-rem(16);
+            line-height: (24/16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(18);
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: (10em/16);
+        border-bottom: 1px solid $color-tertiary;
+        font-size: f-rem(18);
+
+        @include m-query(desktop) {
+            font-size: f-rem(22);
+        }
+    }
+
+    &__text-container {
+        margin-bottom: (20em/16);
+    }
+
+    &__text {
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+
+    &__list {
+        margin-top: (30em/16);
+        font-size: f-rem(14);
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+        }
+    }
+
+    &__item {
+        margin-bottom: (16em/16);
+    }
+
+    &__contact {
+        margin-top: (20em/16);
+    }
+}
+
+a.es-header-btn {
+    background-color: red !important;
+}

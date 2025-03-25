@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cut salon nico</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo logo"><a href="./index.html"><img src="./image/logo.svg" alt="カットサロンニコ"></a>
+            </h1>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li id="active" class="nav__item"><a href="./index.html">HOME</a></li>
+                    <li class="nav__item"><a href="./about.html">ABOUT</a></li>
+                    <li class="nav__item"><a href="./menu.html">MENU</a></li>
+                    <li class="nav__item"><a href="./about.html#allinfo">SHOPINFO</a></li>
+                    <li class="nav__item"><a href="#access">ACCESS</a></li>
+                    <li class="nav__item"><a href="#contact">CONTACT</a></li>
+                    <li class="nav__item instagram-icon">
+                        <a href="#instagram">
+                            <img src="./image/Instagram_Glyph_Gradient.png" alt="インスタグラム">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ham">
+                <button class="ham__btn" aria-label="ハンバーガーメニュー">
+                    <span class="ham__lineTop"></span>
+                    <span class="ham__lineMiddle"></span>
+                    <span class="ham__lineBottom"></span>
+                </button>
+                <nav class="ham__nav">
+                    <ul class="ham__item">
+                        <li id="active" class="ham__list"><a class="ham__link" href="./index.html">HOME</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./about.html">ABOUT</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./menu.html">MENU</a></li>
+                        <li class="ham__list"><a class="ham__link" href="./about.html#allinfo">SHOPINFO</a></li>
+                        <li class="ham__list"><a class="ham__link" href="#access">ACCESS</a></li>
+                        <li class="ham__list"><a class="ham__link" href="#contact">CONTACT</a></li>
+                        <li class="ham__list instagram-menu">
+                            <a class="ham__link" href="#instagram">
+                                <img src="./image/Instagram_Glyph_White.png" alt="インスタグラム">INSTAGRAM
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="top-mainvisual visual">
+            <div class="top-mainvisual-container">
+                <div class="visual__inner">
+                    <div class="scroll-indicator">
+                        <span>SCROLL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="about" class="about">
+            <div class="about__inner">
+                <h2 class="about__title fadeIn">ABOUT</h2>
+                <div class="about__content fadeIn">
+                    <div class="about__text">
+                        <div class="shopname">
+                            <h3 class="shopname__english">cut salon nico</h3>
+                            <p class="shopname__japanese">カットサロンニコ</p>
+                        </div>
+                        <p class="about__catch">男性のお客様だけでなく、<br>
+                            女性のお客様にもご来店<br class="transition-point">いただける、<br class="desktop">
+                            やわらかな<br class="transition-point">雰囲気の理容室（バーバー）です。</p>
+                        <a class="btn" href="./about.html">お店紹介</a>
+                    </div>
+                    <div class="about__pic">
+                        <picture>
+                            <source type="image/webp" srcset="./image/exterior.webp" alt="お店の外観写真">
+                            <img src="./image/exterior.png" alt="お店の外観写真">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="menu__inner">
+                <h2 class="menu__title fadeIn">MENU</h2>
+                <div class="menu__main fadeIn">
+                    <h3 class="menu__maintitle">MAIN MENU</h3>
+
+                    <table class="table">
+                        <thead class="thead">
+                            <tr class="tr">
+                                <th class="th"></th>
+                                <th class="th">カット<br>
+                                    お顔剃り<br>
+                                    シャンプー</th>
+                                <th class="th">カット<br>
+                                    お顔剃り</th>
+                                <th class="th">カットのみ</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr class="tr">
+                                <th class="th">大人</th>
+                                <td class="td" data-label="カット&お顔剃り&シャンプー">3,200円</td>
+                                <td class="td" data-label="カット&お顔剃り">2,800円</td>
+                                <td class="td" data-label="カットのみ">2,500円</td>
+                            </tr>
+                            <tr class="tr">
+                                <th class="th">高校生</th>
+                                <td class="td" data-label="カット&お顔剃り&シャンプー">3,000円</td>
+                                <td class="td" data-label="カット&お顔剃り">2,700円</td>
+                                <td class="td" data-label="カットのみ">2,300円</td>
+                            </tr>
+                            <tr class="tr">
+                                <th class="th">中学生</th>
+                                <td class="td" data-label="カット&お顔剃り&シャンプー">2,800円</td>
+                                <td class="td" data-label="カット&お顔剃り">2,500円</td>
+                                <td class="td" data-label="カットのみ">2,300円</td>
+                            </tr>
+                            <tr class="tr">
+                                <th class="th">小学生</th>
+                                <td class="td" data-label="カット&お顔剃り&シャンプー">2,300円</td>
+                                <td class="td"></td>
+                                <td class="td"></td>
+                            </tr>
+                            <tr class="tr">
+                                <th class="th">小人</th>
+                                <td class="td" data-label="カット&お顔剃り&シャンプー">2,000円</td>
+                                <td class="td"></td>
+                                <td class="td"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="menu__option">
+                    <h3 class="menu__subtitle fadeIn">OPTION</h3>
+
+                    <div class="menuItem fadeIn">
+                        <dl class="menuItem__price">
+                            <dt class="menuItem__category">白髪染めのみ
+                            <dd class="menuItem__text">3,200円</dd>
+                        </dl>
+                        <p class="menuItem__example">＊組合せ例：大人（カット・お顔剃り）+白髪染め=6,000円</p>
+                    </div>
+
+                    <dl class="menuItem fadeIn">
+                        <dt class="menuItem__category">毛穴クレンジングスカルプコース</dt>
+                        <dd class="menuItem__text">4,200円</dd>
+                    </dl>
+                </div>
+                <div class="menu__pic fadeIn">
+                    <a href="./menu.html#scalp">
+                        <picture>
+                            <source type="image/webp" srcset="./image/banner.webp" alt="毛穴クレンジングスカルプコースのバナー">
+                            <img src="./image/banner.png" alt="毛穴クレンジングスカルプコースのバナー">
+                        </picture>
+                    </a>
+                </div>
+                <a class="btn fadeIn" href="./menu.html">料金一覧はこちら</a>
+
+            </div>
+        </section>
+
+        <section id="shop" class="shopinfo">
+            <div class="shopinfo__inner">
+                <h2 class="shopinfo__title fadeIn">SHOPINFO</h2>
+
+                <div class="shopinfo__content fadeIn">
+                    <div class="shopinfo__unit">
+                        <dl class="shopinfo__time">
+                            <dt class="shopinfo__category">OPEN</dt>
+                            <dd class="shopinfo__text">9:00-19:00</dd>
+                        </dl>
+                        <p class="shopinfo__closed">定休日／毎週水曜日、第2・第4木曜日</p>
+                        <a class="btn" href="./about.html#allinfo">店舗情報</a>
+                    </div>
+                    <div class="shopinfo__point">
+                        <div class="shopinfo__list">
+                            <div class="postItem">
+                                <dl class="postItem__label">
+                                    <dt class="postItem__category"><span>point.01</span>予約不要</dt>
+                                    <dd class="postItem__text">当店は予約不要です。いつでもお気軽にお越しください。</dd>
+                                </dl>
+                            </div>
+                            <div class="postItem">
+                                <dl class="postItem__label">
+                                    <dt class="postItem__category"><span>point.02</span>月・火曜日も営業</dt>
+                                    <dd class="postItem__text">毎週月・火曜日も営業しています。</dd>
+                                </dl>
+                            </div>
+                            <div class="postItem">
+                                <dl class="postItem__label">
+                                    <dt class="postItem__category"><span>point.03</span>駐車場15台完備</dt>
+                                    <dd class="postItem__text">広々とした駐車スペースを確保しております。</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram" class="instagram">
+            <div class="instagram__inner">
+                <h2 class="instagram__title fadeIn">Instagram</h2>
+                <div class="instagram__list fadeIn">
+                    <script src="https://embedsocial.com/js/iframe.js"></script><iframe
+                        style="border: 0; width: 100%; height: 100%;" scrolling="no"
+                        src="https://embedsocial.com/api/pro_hashtag/dd1a84c806cec45c948ae10774e2c46f60d9bd26"></iframe>
+                    <script>iFrameResize();</script>
+                </div>
+        </section>
+    </main>
+
+    <footer id="access" class="footer">
+        <section class="footerInfo">
+            <div class="footerInfo__inner">
+                <div class="footerInfo__map fadeIn">
+                    <iframe title="Googleマップ埋め込み"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13074.755707061295!2d136.6416282!3d34.9894558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60038f9e1160b8cf%3A0x20674213593c2bd9!2z44Kr44OD44OI44K144Ot44Oz44OL44Kz5Zub5pel5biCKGN1dCBzYWxvbiAtbmljby0gKQ!5e0!3m2!1sja!2sjp!4v1733288875441!5m2!1sja!2sjp"
+                        width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="footerInfo__data">
+                    <div class="access">
+                        <h2 class="access__title fadeIn">ACCESS</h2>
+                        <dl class="access__list fadeIn">
+                            <div class="access__item">
+                                <dt class="access__category">所在地</dt>
+                                <dd class="access__text">三重県四日市市白須賀1丁目13-1</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div id="contact" class="contact">
+                        <h2 class="contact__title fadeIn">CONTACT</h2>
+                        <p class="contact__tel">TEL:059-333-5160</p>
+                        <dl class="contact__list fadeIn">
+                            <div class="contact__item">
+                                <dt class="contact__category">受付時間</dt>
+                                <dd class="contact__text">9:00 – 19:00</dd>
+                            </div>
+                            <div class="contact__item">
+                                <dt class="contact__category">定休日</dt>
+                                <dd class="contact__text">毎週水曜日、第2・第4木曜日</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="footerInfo__logo logo fadeIn"><img src="./image/logo.svg" alt="カットサロンニコ"></div>
+            </div>
+        </section>
+
+        <div class="footerEnd">
+            <div class="footerEnd__inner">
+                <div class="footerNav fadeIn">
+                    <ul class="footerNav__list">
+                        <li class="footerNav__item"><a href="./privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footerEnd__copy fadeIn"><small>Copyright &copy; 2023 cut salon nico All Rights
+                        Reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/ham-menu.js"></script>
+    <script src="./js/smooth-scroll.js" defer></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.fadeIn', {
+            duration: 800,
+            viewFactor: 0.2, // 0~1,どれくらい見えたら実行するか
+            reset: false
+        });
+    </script>
+</body>
+
+</html>
