@@ -9,7 +9,6 @@
 <br />
 <br />
 
-
 ### ▼制作スケジュール
 
 - **10月7日〜14日：企画書作成**
@@ -18,8 +17,14 @@
 - **11月25日〜1月5日：マークアップ**
 - **1月6日〜19日：各種資料作成**
 - **1月20日〜進級展当日：プレゼン練習・調整**
+<br />
 
 ### ▼使用技術・ツール
 ![](https://skillicons.dev/icons?i=html,css,scss,js,figma,ps,ai,vscode)
 
-▼[スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
+おもにfigmaはコンテンツマップやデザインデータ作成に使用し、photoshopは画像加工、illustlatorはバナー作成などで使用しました。
+<br />
+<br />
+
+
+- [スライドリンク](https://www.canva.com/design/DAGdGROfhhI/TroupHsVM4ccIp99cjBMIg/view)
