@@ -82,5 +82,6 @@
 - 女性を意識しつつも、男性のお客様に来店しづらい印象を与えてしまわないよう、細かい装飾は控え、男女問わず来店しやすいナチュラルで中立的な雰囲気を大切にしました。
 
 <p align="center">
-<img src="./image/scleenshot4.png" style="width:60%">
+<img src="./image/scleenshot4.png" style="width:50%">
+<img src="./image/scleenshot5.png" style="width:45%">
 </p>
