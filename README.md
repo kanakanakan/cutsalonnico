@@ -60,6 +60,9 @@
 <p align="center">
 <img src="./image/scleenshot1.png" style="width:70%">
 </p>
+
+> **画像**： プレゼン用スライド資料から一部抜粋
+
 <br />
 <br />
 
